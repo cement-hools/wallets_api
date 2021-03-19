@@ -58,15 +58,3 @@ class Transaction(models.Model):
         wallet = self.wallet.title
 
         return f'{wallet}: {self.type}{self.amount}'
-
-    # def save(self, *args, **kwargs):  # вызывается при сохранении
-    #     creating = not self.pk
-    #     old_balance = self.wallet.balance
-    #     if not creating:
-    #         old_balance = Transaction.objects.get(id=self.id).amount
-    #     super().save(*args, **kwargs)  # делаем сохранение из родительского метода чтобы потом просто добавитьфункцию
-    #
-    #     new_balance = self.amount
-    #
-    #     if old_rating != new_rating or creating:
-    #         set_rating(self.book)
