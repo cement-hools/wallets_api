@@ -14,7 +14,7 @@ transaction_router.register('transactions', WalletTransactionViewSet,
                             basename='transactions')
 
 transactions_all_router = DefaultRouter()
-transactions_all_router.register('transactions_all', UserTransactionViewSet,
+transactions_all_router.register('transactions', UserTransactionViewSet,
                                  basename='user_transactions')
 
 urlpatterns = [
@@ -29,7 +29,7 @@ urlpatterns = [
     path('v1/transactions/', transactions, name='transactions'),
 
     path('v2/', include(wallet_router.urls)),
-    path('v2/', include(transactions_all_router.urls)),
+    path('v2/all/', include(transactions_all_router.urls)),
     path('v2/wallets/<int:wallet_id>/', include(transaction_router.urls)),
 
 ]

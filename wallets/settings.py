@@ -27,16 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'djoser',
     'rest_framework',
-    'rest_auth',
-    'rest_auth.registration',
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-]
 
-SITE_ID = 1
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -98,8 +91,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-            'rest_framework.permissions.IsAuthenticated',
-        ],
+        'rest_framework.permissions.IsAuthenticated',
+    ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
@@ -117,3 +110,5 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = 'wallets'
